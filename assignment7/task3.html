@@ -1,0 +1,56 @@
+ <!DOCTYPE html>
+ <html>
+ <head>
+   <style>
+     .correct {
+       background-color: green;
+     }
+     .incorrect {
+       background-color: red;
+     }
+   </style>
+ </head>
+ <body>
+   <h1>Quiz Game</h1>
+   <h2 class="point">point:</h2>
+   <div id="quiz">
+     <h3>Question 1:</h3>
+     <p>What is the capital city of France?</p>
+     <ul>
+       <li class="option">a) Paris</li>
+       <li class="option">b) London</li>
+       <li class="option">c) Rome</li>
+       <li class="option">d) Madrid</li>
+     </ul>
+   </div>
+ 
+   <script>
+      
+     const options = document.querySelectorAll('.option');
+     const point= document.getElementsByClassName('point')
+     let counter=0;
+ 
+     
+     options.forEach(option => {
+       option.addEventListener('click', function() {
+         const correctAnswer = 'a) Paris'; 
+ 
+          
+         if (this.textContent === correctAnswer) {
+           this.classList.add('correct');
+           counter+=1
+           point.textContent=`${counter}`;
+         } else {
+           this.classList.add('incorrect');
+         }
+ 
+         
+         options.forEach(option => {
+           option.style.pointerEvents = 'none';
+         });
+       });
+     });
+   </script>
+ </body>
+ </html>
+ 

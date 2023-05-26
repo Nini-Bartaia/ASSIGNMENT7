@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+</head>
+<body>
+  <div id="container"></div>
+
+  <script>
+   
+    var cardDiv = document.createElement("div");
+    cardDiv.id = "card";
+
+    var heading = document.createElement("h2");
+    heading.textContent = "Gandalf";
+
+    var link = document.createElement("a");
+    link.href = "#";
+    link.textContent = "Go to profile";
+
+     
+    cardDiv.appendChild(heading);
+    cardDiv.appendChild(link);
+
+    
+    var container = document.getElementById("container");
+    container.appendChild(cardDiv);
+  </script>
+</body>
+</html>
